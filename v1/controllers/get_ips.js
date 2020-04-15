@@ -17,9 +17,11 @@ module.exports = (req, res) => {
     }
 
     const command = process.env.TS_PATH + ' ' + hash + ' -a | sort | uniq';
+    console.log(`Executing command ${command}`);
 
     try {
         const result = execSync(command);
+        console.log(result)
         res.status(200).send(result.toString());
     } catch (error){
         res.status(500).send();
