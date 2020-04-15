@@ -8,7 +8,7 @@ require('dotenv').config()
 var api_v1 = require('./v1/api_route');
 
 var app = express();
-app.use(cors);
+app.use(cors());
 var http = require('http').Server(app);
 
 //require('./db/initialize');
